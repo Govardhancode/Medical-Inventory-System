@@ -1,0 +1,1450 @@
+/* =====================================================
+   MEDINVENTORY LAYOUT
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background: #031525;
+}
+
+/* =====================================================
+   MAIN LAYOUT
+   ===================================================== */
+
+.medical-layout {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(0, 214, 255, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(0, 126, 255, 0.07),
+      transparent 35%
+    ),
+    #031525;
+
+  color: #f1f7ff;
+}
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.medical-sidebar {
+  width: 265px;
+  min-width: 265px;
+
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      180deg,
+      #061f31 0%,
+      #031625 100%
+    );
+
+  border-right:
+    1px solid rgba(0, 217, 239, 0.22);
+
+  box-shadow:
+    8px 0 35px rgba(0, 0, 0, 0.25);
+
+  z-index: 1000;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   LOGO
+   ===================================================== */
+
+.medical-logo-area {
+  min-height: 162px;
+
+  padding: 25px 24px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  border-bottom:
+    1px solid rgba(0, 217, 239, 0.13);
+}
+
+.medical-logo-icon {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #00eaff;
+
+  font-size: 36px;
+  font-weight: 300;
+
+  border:
+    1px solid #00eaff;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 217, 239, 0.15),
+      rgba(0, 217, 239, 0.02)
+    );
+
+  box-shadow:
+    0 0 24px rgba(0, 217, 239, 0.15);
+}
+
+.medical-logo-text {
+  padding-top: 5px;
+}
+
+.medical-logo-text h1 {
+  margin: 0;
+
+  color: #00eaff;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.medical-logo-text p {
+  margin: 6px 0 0;
+
+  color: #91aabd;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.medical-sidebar-menu {
+  flex: 1;
+
+  padding: 28px 14px 10px;
+
+  overflow-y: auto;
+}
+
+.medical-sidebar-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.medical-sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(0, 217, 239, 0.25);
+  border-radius: 10px;
+}
+
+.medical-nav-button {
+  width: 100%;
+  min-height: 54px;
+
+  margin-bottom: 7px;
+
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 0 20px;
+
+  border-radius: 11px;
+
+  background: transparent;
+
+  color: #c7d7e2;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-align: left;
+
+  transition: 0.2s ease;
+}
+
+.medical-nav-button:hover {
+  color: #ffffff;
+
+  background:
+    rgba(0, 217, 239, 0.08);
+
+  transform: translateX(2px);
+}
+
+.medical-nav-button.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 217, 239, 0.22),
+      rgba(15, 154, 168, 0.12)
+    );
+
+  border-left:
+    3px solid #00eaff;
+
+  box-shadow:
+    0 0 20px rgba(0, 217, 239, 0.08);
+}
+
+.medical-nav-icon {
+  width: 24px;
+  min-width: 24px;
+
+  display: flex;
+  justify-content: center;
+
+  color: #72dce8;
+
+  font-size: 21px;
+}
+
+.medical-nav-button.active .medical-nav-icon {
+  color: #00eaff;
+}
+
+.medical-nav-text {
+  white-space: nowrap;
+}
+
+.medical-nav-button.logout {
+  color: #ff5963;
+}
+
+.medical-nav-button.logout .medical-nav-icon {
+  color: #ff3948;
+}
+
+.medical-nav-button.logout:hover {
+  background:
+    rgba(239, 68, 68, 0.08);
+}
+
+/* =====================================================
+   SIDEBAR DECORATION
+   ===================================================== */
+
+.medical-sidebar-decoration {
+  height: 150px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-top:
+    1px solid rgba(0, 217, 239, 0.09);
+
+  border-bottom:
+    1px solid rgba(0, 217, 239, 0.09);
+
+  background:
+    radial-gradient(
+      circle at 50% 60%,
+      rgba(0, 217, 239, 0.08),
+      transparent 55%
+    );
+}
+
+.medical-pulse-line {
+  position: absolute;
+
+  left: 15px;
+  right: 15px;
+
+  top: 50%;
+
+  color: #00eaff;
+
+  font-size: 20px;
+
+  white-space: nowrap;
+
+  opacity: 0.55;
+
+  text-shadow:
+    0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.medical-decoration-cross {
+  position: absolute;
+
+  left: 34px;
+  bottom: 18px;
+
+  color: #00eaff;
+
+  font-size: 48px;
+
+  opacity: 0.22;
+}
+
+/* =====================================================
+   PROFILE
+   ===================================================== */
+
+.medical-profile {
+  min-height: 124px;
+
+  padding: 18px 22px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  border-top:
+    1px solid rgba(0, 217, 239, 0.14);
+
+  background:
+    rgba(1, 15, 27, 0.55);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.medical-profile:hover {
+  background:
+    rgba(0, 217, 239, 0.06);
+}
+
+.medical-profile-avatar {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0fa8a5,
+      #1675e8
+    );
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.medical-profile-info {
+  min-width: 0;
+}
+
+.medical-profile-name {
+  margin: 0;
+
+  color: #f1f7ff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.medical-profile-role {
+  margin: 4px 0 0;
+
+  color: #8da6bb;
+
+  font-size: 12px;
+}
+
+.medical-profile-status {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 5px;
+
+  color: #8da6bb;
+
+  font-size: 11px;
+}
+
+.medical-online-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 7px rgba(34, 197, 94, 0.7);
+}
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+.medical-main {
+  width: calc(100% - 265px);
+
+  min-height: 100vh;
+
+  margin-left: 265px;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    #031b2b;
+}
+
+/* =====================================================
+   TOP BAR
+   ===================================================== */
+
+.medical-topbar {
+  height: 76px;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 16px;
+
+  padding: 0 30px;
+
+  border-bottom:
+    1px solid rgba(0, 217, 239, 0.13);
+
+  background:
+    rgba(2, 19, 33, 0.96);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 900;
+}
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.medical-global-search {
+  width: 325px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 16px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid rgba(0, 217, 239, 0.28);
+
+  background:
+    rgba(3, 21, 37, 0.8);
+
+  transition: 0.2s ease;
+}
+
+.medical-global-search:focus-within {
+  border-color: #00eaff;
+
+  box-shadow:
+    0 0 18px rgba(0, 217, 239, 0.12);
+}
+
+.medical-search-icon {
+  font-size: 18px;
+
+  margin-right: 10px;
+}
+
+.medical-global-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #f1f7ff;
+
+  font-size: 14px;
+}
+
+.medical-global-search input::placeholder {
+  color: #688399;
+}
+
+/* =====================================================
+   TOP ICONS
+   ===================================================== */
+
+.medical-top-icon {
+  width: 44px;
+  height: 44px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #c5d4e0;
+
+  font-size: 20px;
+
+  transition: 0.2s ease;
+}
+
+.medical-top-icon:hover,
+.medical-top-icon.active {
+  color: #00eaff;
+
+  background:
+    rgba(0, 217, 239, 0.1);
+}
+
+.medical-notification-badge {
+  position: absolute;
+
+  right: 1px;
+  top: 0;
+
+  min-width: 19px;
+  height: 19px;
+
+  padding: 0 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  border:
+    2px solid #031525;
+}
+
+/* =====================================================
+   TOP PROFILE BUTTON
+   ===================================================== */
+
+.medical-top-profile-button {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #dfe8f0
+    );
+
+  color: #39227d;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.medical-top-profile-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 0 15px rgba(0, 217, 239, 0.2);
+}
+
+/* =====================================================
+   NOTIFICATION PANEL
+   ===================================================== */
+
+.medical-notification-panel-wrapper {
+  position: fixed;
+
+  top: 82px;
+  right: 75px;
+
+  z-index: 1200;
+}
+
+.medical-notification-panel {
+  width: 360px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #08283b,
+      #051a2c
+    );
+
+  border:
+    1px solid rgba(0, 217, 239, 0.25);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
+
+  overflow: hidden;
+}
+
+.medical-notification-header {
+  padding: 17px 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom:
+    1px solid rgba(0, 217, 239, 0.12);
+}
+
+.medical-notification-header h3 {
+  margin: 0;
+
+  color: #f1f7ff;
+
+  font-size: 16px;
+}
+
+.medical-notification-header span {
+  color: #00eaff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.medical-notification-item {
+  padding: 15px 18px;
+
+  display: flex;
+
+  gap: 12px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  cursor: pointer;
+}
+
+.medical-notification-item:hover {
+  background:
+    rgba(0, 217, 239, 0.06);
+}
+
+.medical-notification-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    rgba(0, 217, 239, 0.08);
+
+  font-size: 18px;
+}
+
+.medical-notification-text h4 {
+  margin: 0 0 4px;
+
+  color: #eaf5ff;
+
+  font-size: 13px;
+}
+
+.medical-notification-text p {
+  margin: 0;
+
+  color: #829bb0;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =====================================================
+   PROFILE POPUP
+   ===================================================== */
+
+.medical-profile-popup {
+  position: fixed;
+
+  top: 82px;
+  right: 20px;
+
+  width: 300px;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #08283b,
+      #051a2c
+    );
+
+  border:
+    1px solid rgba(0, 217, 239, 0.25);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
+
+  z-index: 1200;
+}
+
+.medical-profile-popup-top {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 15px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.medical-popup-avatar {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0fa8a5,
+      #1675e8
+    );
+
+  color: white;
+
+  font-weight: 800;
+}
+
+.medical-profile-popup h3 {
+  margin: 0;
+
+  color: #f1f7ff;
+
+  font-size: 15px;
+}
+
+.medical-profile-popup p {
+  margin: 4px 0 0;
+
+  color: #8199ad;
+
+  font-size: 11px;
+}
+
+.medical-profile-popup-info {
+  padding: 14px 0;
+}
+
+.medical-popup-row {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 12px;
+
+  font-size: 12px;
+}
+
+.medical-popup-row span:first-child {
+  color: #7790a5;
+}
+
+.medical-popup-row span:last-child {
+  color: #d9e8f5;
+
+  font-weight: 600;
+
+  text-align: right;
+}
+
+.online-text {
+  color: #22c55e !important;
+}
+
+.medical-popup-profile-button,
+.medical-popup-close {
+  width: 100%;
+  height: 40px;
+
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  margin-top: 8px;
+}
+
+.medical-popup-profile-button {
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d8fa1,
+      #109fa5
+    );
+
+  color: white;
+}
+
+.medical-popup-close {
+  border:
+    1px solid rgba(0, 217, 239, 0.25);
+
+  background:
+    rgba(0, 217, 239, 0.07);
+
+  color: #00eaff;
+}
+
+/* =====================================================
+   CONTENT
+   ===================================================== */
+
+.medical-content {
+  flex: 1;
+
+  width: 100%;
+
+  min-height: calc(100vh - 128px);
+
+  padding: 30px 34px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4fbfd 0%,
+      #edf7fa 50%,
+      #f7fbfc 100%
+    );
+
+  color: #12314a;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.medical-footer {
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 25px;
+
+  border-top:
+    1px solid #dce8ed;
+
+  color: #7890a0;
+
+  font-size: 12px;
+
+  background:
+    #f5fafc;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+  .medical-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .medical-main {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+  }
+
+  .medical-global-search {
+    width: 240px;
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .medical-sidebar {
+    width: 75px;
+    min-width: 75px;
+  }
+
+  .medical-main {
+    width: calc(100% - 75px);
+    margin-left: 75px;
+  }
+
+  .medical-logo-area {
+    min-height: 90px;
+
+    padding: 15px;
+
+    justify-content: center;
+  }
+
+  .medical-logo-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+
+    font-size: 27px;
+  }
+
+  .medical-logo-text {
+    display: none;
+  }
+
+  .medical-nav-button {
+    justify-content: center;
+
+    padding: 0;
+
+    gap: 0;
+  }
+
+  .medical-nav-text {
+    display: none;
+  }
+
+  .medical-profile {
+    justify-content: center;
+
+    padding: 12px;
+  }
+
+  .medical-profile-info {
+    display: none;
+  }
+
+  .medical-profile-avatar {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  .medical-sidebar-decoration {
+    display: none;
+  }
+
+  .medical-topbar {
+    padding: 0 12px;
+  }
+
+  .medical-global-search {
+    width: 190px;
+  }
+
+  .medical-content {
+    padding: 18px;
+  }
+
+  .medical-footer {
+    padding: 12px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .medical-global-search {
+    width: 150px;
+  }
+
+  .medical-global-search input {
+    font-size: 12px;
+  }
+
+  .medical-top-icon {
+    width: 38px;
+  }
+
+  .medical-top-profile-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .medical-content {
+    padding: 12px;
+  }
+
+  .medical-footer {
+    font-size: 10px;
+  }
+
+}
+/* =====================================================
+   NOTIFICATION SYSTEM - FIXED
+===================================================== */
+
+.medical-notification-container {
+  position: fixed;
+
+  top: 76px;
+  right: 85px;
+
+  width: 370px;
+
+  z-index: 99999;
+
+  pointer-events: none;
+}
+
+.medical-notification-panel {
+  width: 100%;
+
+  pointer-events: auto;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(0, 217, 239, 0.35);
+
+  background:
+    linear-gradient(
+      180deg,
+      #08283b 0%,
+      #041a2a 100%
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(0, 217, 239, 0.08);
+
+  animation:
+    medicalNotificationOpen 0.2s ease;
+}
+
+@keyframes medicalNotificationOpen {
+
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+/* HEADER */
+
+.medical-notification-header {
+  min-height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 15px 18px;
+
+  border-bottom:
+    1px solid rgba(0, 217, 239, 0.14);
+}
+
+.medical-notification-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+.medical-notification-header p {
+  margin: 4px 0 0;
+
+  color: #7f9caf;
+
+  font-size: 11px;
+}
+
+.medical-notification-count {
+  min-width: 55px;
+
+  padding: 7px 10px;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  background:
+    rgba(239, 68, 68, 0.14);
+
+  border:
+    1px solid rgba(239, 68, 68, 0.25);
+
+  color: #ff7070;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+/* LIST */
+
+.medical-notification-list {
+  max-height: 330px;
+
+  overflow-y: auto;
+}
+
+.medical-notification-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.medical-notification-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.medical-notification-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 217, 239, 0.25);
+
+  border-radius: 10px;
+}
+
+/* ITEM */
+
+.medical-notification-item {
+  width: 100%;
+
+  min-height: 82px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  padding: 15px 18px;
+
+  border: none;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  background: transparent;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.medical-notification-item:hover {
+  background:
+    rgba(0, 217, 239, 0.08);
+
+  transform: translateX(2px);
+}
+
+/* ICON */
+
+.medical-notification-icon {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(0, 217, 239, 0.09);
+
+  border:
+    1px solid rgba(0, 217, 239, 0.15);
+
+  font-size: 20px;
+}
+
+/* WARNING */
+
+.medical-notification-item.warning
+.medical-notification-icon {
+  background:
+    rgba(245, 158, 11, 0.12);
+
+  border-color:
+    rgba(245, 158, 11, 0.25);
+}
+
+/* INFO */
+
+.medical-notification-item.info
+.medical-notification-icon {
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  border-color:
+    rgba(37, 99, 235, 0.25);
+}
+
+/* SUCCESS */
+
+.medical-notification-item.success
+.medical-notification-icon {
+  background:
+    rgba(22, 163, 74, 0.12);
+
+  border-color:
+    rgba(22, 163, 74, 0.25);
+}
+
+/* TEXT */
+
+.medical-notification-content {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.medical-notification-content strong {
+  color: #f1f7ff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.medical-notification-content span {
+  color: #8aa2b5;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+.medical-notification-content small {
+  color: #4fc6d4;
+
+  font-size: 10px;
+
+  margin-top: 2px;
+}
+
+/* FOOTER */
+
+.medical-notification-footer {
+  padding: 11px 15px;
+
+  border-top:
+    1px solid rgba(0, 217, 239, 0.12);
+
+  background:
+    rgba(0, 0, 0, 0.12);
+}
+
+.medical-notification-footer button {
+  width: 100%;
+
+  height: 34px;
+
+  border:
+    1px solid rgba(0, 217, 239, 0.25);
+
+  border-radius: 8px;
+
+  background:
+    rgba(0, 217, 239, 0.06);
+
+  color:
+    #00d9ef;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.medical-notification-footer button:hover {
+  background:
+    rgba(0, 217, 239, 0.13);
+}
+
+/* BELL */
+
+.medical-bell-icon {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.medical-top-icon:hover
+.medical-bell-icon {
+  transform:
+    rotate(-12deg) scale(1.08);
+}
+
+/* ACTIVE BELL */
+
+.medical-top-icon.active
+.medical-bell-icon {
+  animation:
+    medicalBellPulse 0.6s ease;
+}
+
+@keyframes medicalBellPulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+  .medical-notification-container {
+    top: 70px;
+
+    right: 10px;
+
+    width:
+      min(
+        370px,
+        calc(100vw - 90px)
+      );
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .medical-notification-container {
+    right: 8px;
+
+    width:
+      calc(100vw - 85px);
+  }
+
+}
