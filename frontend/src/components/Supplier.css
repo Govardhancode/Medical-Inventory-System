@@ -1,0 +1,784 @@
+/* =========================================================
+   SUPPLIER MANAGEMENT
+   SAME MEDINVENTORY DARK THEME
+========================================================= */
+
+.supplier-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 5px;
+  color: #f1f7ff;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.supplier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.supplier-header h1 {
+  margin: 0;
+  color: #f1f7ff;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.supplier-header p {
+  margin: 7px 0 0;
+  color: #8da6bb;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.supplier-back-button {
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: rgba(0, 229, 255, 0.07);
+  color: #00e5ff;
+
+  padding: 11px 18px;
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-back-button:hover {
+  background: rgba(0, 229, 255, 0.14);
+  border-color: #00e5ff;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.supplier-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px;
+
+  margin-bottom: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 35, 56, 0.92),
+      rgba(4, 27, 45, 0.92)
+    );
+
+  border: 1px solid rgba(0, 229, 255, 0.13);
+  border-radius: 13px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.supplier-search {
+  flex: 1;
+
+  height: 44px;
+
+  padding: 0 16px;
+
+  border: 1px solid rgba(0, 229, 255, 0.20);
+  border-radius: 9px;
+
+  outline: none;
+
+  background: rgba(3, 21, 37, 0.8);
+
+  color: #f1f7ff;
+
+  font-size: 14px;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-search::placeholder {
+  color: #688399;
+}
+
+.supplier-search:focus {
+  border-color: #00e5ff;
+
+  box-shadow:
+    0 0 15px rgba(0, 229, 255, 0.10);
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.supplier-refresh {
+  height: 44px;
+
+  padding: 0 17px;
+
+  border: 1px solid rgba(0, 229, 255, 0.22);
+  border-radius: 9px;
+
+  background: rgba(0, 229, 255, 0.07);
+
+  color: #00e5ff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-refresh:hover {
+  background: rgba(0, 229, 255, 0.14);
+  border-color: #00e5ff;
+}
+
+
+/* =========================================================
+   ADD SUPPLIER BUTTON
+========================================================= */
+
+.supplier-add {
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00c9b7,
+      #1479ff
+    );
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(0, 201, 183, 0.15);
+
+  transition: all 0.2s ease;
+}
+
+.supplier-add:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 201, 183, 0.25);
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.supplier-error {
+  margin-bottom: 20px;
+
+  padding: 14px 17px;
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 10px;
+
+  background: rgba(127, 29, 29, 0.20);
+
+  color: #ff7b82;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+========================================================= */
+
+.supplier-form-container {
+  margin-bottom: 22px;
+
+  padding: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 35, 56, 0.96),
+      rgba(5, 26, 44, 0.96)
+    );
+
+  border: 1px solid rgba(0, 229, 255, 0.18);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.supplier-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 22px;
+
+  border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.supplier-form-header h2 {
+  margin: 0;
+
+  color: #f1f7ff;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.supplier-close {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid rgba(239, 68, 68, 0.20);
+  border-radius: 8px;
+
+  background: rgba(239, 68, 68, 0.07);
+
+  color: #ff6b73;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-close:hover {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.supplier-form-container form {
+  padding: 22px;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.supplier-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.supplier-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.supplier-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.supplier-form-group label {
+  color: #9bb2c5;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.supplier-form-group input,
+.supplier-form-group textarea {
+  width: 100%;
+
+  border: 1px solid rgba(0, 229, 255, 0.18);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: rgba(3, 21, 37, 0.85);
+
+  color: #f1f7ff;
+
+  font-size: 13px;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-form-group input {
+  height: 44px;
+
+  padding: 0 13px;
+}
+
+.supplier-form-group textarea {
+  padding: 12px 13px;
+
+  resize: vertical;
+
+  min-height: 85px;
+}
+
+.supplier-form-group input::placeholder,
+.supplier-form-group textarea::placeholder {
+  color: #61798c;
+}
+
+.supplier-form-group input:focus,
+.supplier-form-group textarea:focus {
+  border-color: #00e5ff;
+
+  box-shadow:
+    0 0 14px rgba(0, 229, 255, 0.09);
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.supplier-form-buttons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 22px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(0, 229, 255, 0.10);
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.supplier-cancel {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #9eb1c0;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-cancel:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+.supplier-save {
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00c9b7,
+      #1479ff
+    );
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-save:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 201, 183, 0.20);
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.supplier-table-container {
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 35, 56, 0.95),
+      rgba(4, 27, 45, 0.95)
+    );
+
+  border: 1px solid rgba(0, 229, 255, 0.13);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.20);
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.supplier-table {
+  width: 100%;
+
+  min-width: 950px;
+
+  border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.supplier-table thead {
+  background:
+    rgba(0, 229, 255, 0.055);
+}
+
+.supplier-table th {
+  padding: 15px 16px;
+
+  text-align: left;
+
+  color: #8edee9;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+
+  border-bottom: 1px solid rgba(0, 229, 255, 0.13);
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.supplier-table td {
+  padding: 15px 16px;
+
+  color: #c7d6e2;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+
+  vertical-align: middle;
+}
+
+.supplier-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.supplier-table tbody tr:hover {
+  background:
+    rgba(0, 229, 255, 0.045);
+}
+
+.supplier-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   SUPPLIER NAME
+========================================================= */
+
+.supplier-table td strong {
+  color: #f1f7ff;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.supplier-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.supplier-edit {
+  border: 1px solid rgba(0, 229, 255, 0.18);
+
+  border-radius: 7px;
+
+  background: rgba(0, 229, 255, 0.07);
+
+  color: #00e5ff;
+
+  padding: 7px 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-edit:hover {
+  background: rgba(0, 229, 255, 0.14);
+
+  border-color: #00e5ff;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.supplier-delete {
+  border: 1px solid rgba(239, 68, 68, 0.18);
+
+  border-radius: 7px;
+
+  background: rgba(239, 68, 68, 0.07);
+
+  color: #ff6b73;
+
+  padding: 7px 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.supplier-delete:hover {
+  background: rgba(239, 68, 68, 0.14);
+
+  border-color: #ef4444;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY MESSAGE
+========================================================= */
+
+.supplier-message {
+  margin: 0;
+
+  padding: 55px 20px;
+
+  text-align: center;
+
+  color: #7f98aa;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.supplier-table-container::-webkit-scrollbar {
+  height: 7px;
+}
+
+.supplier-table-container::-webkit-scrollbar-track {
+  background: #031525;
+}
+
+.supplier-table-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.25);
+
+  border-radius: 10px;
+}
+
+.supplier-table-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.45);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .supplier-header {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .supplier-header h1 {
+    font-size: 23px;
+  }
+
+  .supplier-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .supplier-search {
+    flex-basis: 100%;
+  }
+
+  .supplier-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .supplier-form-group.full-width {
+    grid-column: auto;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .supplier-page {
+    padding: 0;
+  }
+
+  .supplier-header {
+    flex-direction: column;
+  }
+
+  .supplier-back-button {
+    width: 100%;
+  }
+
+  .supplier-toolbar {
+    padding: 12px;
+  }
+
+  .supplier-refresh,
+  .supplier-add {
+    flex: 1;
+  }
+
+  .supplier-form-container form {
+    padding: 16px;
+  }
+
+  .supplier-form-buttons {
+    flex-direction: column;
+  }
+
+  .supplier-cancel,
+  .supplier-save {
+    width: 100%;
+  }
+
+}
