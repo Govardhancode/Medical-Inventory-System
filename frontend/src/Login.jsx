@@ -37,7 +37,7 @@ function Login({ onLogin, onSwitchToSignup }) {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/auth/login",
+        "https://medical-inventory-system-vtbs.onrender.com/api/auth/login",
         {
           method: "POST",
           headers: {
@@ -114,7 +114,7 @@ function Login({ onLogin, onSwitchToSignup }) {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/auth/forgot-password",
+        "https://medical-inventory-system-vtbs.onrender.com/api/auth/forgot-password",
         {
           method: "POST",
           headers: {

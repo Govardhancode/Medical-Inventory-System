@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./Reports.css";
 
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://medical-inventory-system-vtbs.onrender.com/api";
 
 function Reports({ onBack }) {
   const [medicines, setMedicines] = useState([]);

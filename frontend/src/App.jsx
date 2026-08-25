@@ -10,7 +10,7 @@ import SupplierManagement from "./components/SupplierManagement";
 import Profile from "./Profile";
 import AIChatbox from "./AIChatbox";
 
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://medical-inventory-backend-li17.onrender.com/api";
 
 function App() {
   // =====================================================

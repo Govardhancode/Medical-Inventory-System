@@ -296,7 +296,7 @@ function Profile({
       setMessage("");
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/change-password",
+        "https://medical-inventory-system-vtbs.onrender.com/api/auth/change-password",
         {
           method: "POST",
           headers: {
