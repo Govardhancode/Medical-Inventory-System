@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./AIChatbox.css";
 
-const API_URL = "https://medical-inventory-system-vtbs.onrender.com/api";
+const API_URL = "https://medical-inventory-backend-li17.onrender.com/api";
 
 function AIChatbox({ medicines = [], totalBills = 0 }) {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_URL = "https://medical-inventory-system-vtbs.onrender.com/api";
+const API_URL = "https://medical-inventory-backend-li17.onrender.com/api";
 
 function BillingHistory({ onBack }) {
   const [bills, setBills] = useState([]);

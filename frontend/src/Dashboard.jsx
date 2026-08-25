@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Dashboard.css";
 import Profile from "./Profile";
 
-const API_URL = "https://medical-inventory-system-vtbs.onrender.com/api";
+const API_URL = "https://medical-inventory-backend-li17.onrender.com/api";
 
 function Dashboard({ onBack, currentUser }) {
   const [medicines, setMedicines] = useState([]);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Signup.css";
 
-const API_BASE_URL = "https://medical-inventory-system-vtbs.onrender.com/api/auth";
+const API_BASE_URL = "https://medical-inventory-backend-li17.onrender.com/api/auth";
 
 function Sign({ onAuthSuccess }) {
   const [isLogin, setIsLogin] = useState(true);

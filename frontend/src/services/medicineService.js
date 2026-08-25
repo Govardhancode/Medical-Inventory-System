@@ -1,4 +1,4 @@
-const API_URL = "https://medical-inventory-system-vtbs.onrender.com/api/medicines";
+const API_URL = "https://medical-inventory-backend-li17.onrender.com/api/medicines";
 
 export async function getMedicines() {
   const response = await fetch(API_URL);
