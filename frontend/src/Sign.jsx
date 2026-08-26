@@ -248,7 +248,7 @@ function Sign({ onAuthSuccess }) {
       );
 
       setError(
-        "Unable to connect to the server. Make sure Spring Boot is running on port 8080."
+        "Unable to connect to the server. Please check your internet connection and try again."
       );
     } finally {
       setLoading(false);
@@ -379,7 +379,7 @@ function Sign({ onAuthSuccess }) {
       );
 
       setError(
-        "Unable to connect to the server. Make sure Spring Boot is running on port 8080."
+        "Unable to connect to the server. Please check your internet connection and try again."
       );
     } finally {
       setLoading(false);
@@ -467,7 +467,7 @@ function Sign({ onAuthSuccess }) {
       );
 
       setError(
-        "Unable to connect to the server. Make sure Spring Boot is running."
+        "Unable to connect to the server. Please check your internet connection and try again."
       );
     } finally {
       setLoading(false);
