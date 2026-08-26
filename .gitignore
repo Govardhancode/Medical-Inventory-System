@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 backend/error.log
+backend/src/main/resources/application-local.properties
