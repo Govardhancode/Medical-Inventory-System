@@ -1,9 +1,7 @@
-
 import { useState } from "react";
 import "./Signup.css";
 
-const API_BASE_URL =
-  "https://medical-inventory-backend-li17.onrender.com/api/auth";
+const API_BASE_URL = "https://medical-inventory-backend-li17.onrender.com/api/auth";
 
 function Sign({ onAuthSuccess }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -57,6 +55,7 @@ function Sign({ onAuthSuccess }) {
 
     setError("");
     setSuccess("");
+
     setShowPassword(false);
     setShowConfirmPassword(false);
   };
@@ -144,9 +143,11 @@ function Sign({ onAuthSuccess }) {
         `${API_BASE_URL}/login`,
         {
           method: "POST",
+
           headers: {
             "Content-Type": "application/json",
           },
+
           body: JSON.stringify({
             email,
             password,
@@ -164,6 +165,7 @@ function Sign({ onAuthSuccess }) {
           await getErrorMessage(response);
 
         setError(message);
+
         return;
       }
 
@@ -187,16 +189,14 @@ function Sign({ onAuthSuccess }) {
       // STORE USER
       // =================================================
 
-      const user = {
-        id: data.id,
-        name: data.name,
-        fullName: data.name,
-        email: data.email,
-      };
-
       localStorage.setItem(
         "medInventoryUser",
-        JSON.stringify(user)
+        JSON.stringify({
+          id: data.id,
+          name: data.name,
+          fullName: data.name,
+          email: data.email,
+        })
       );
 
       // =================================================
@@ -220,6 +220,7 @@ function Sign({ onAuthSuccess }) {
       );
 
       // =================================================
+      // IMPORTANT
       // SEND USER TO APP.JSX
       // =================================================
 
@@ -228,12 +229,18 @@ function Sign({ onAuthSuccess }) {
           "Calling onAuthSuccess..."
         );
 
-        onAuthSuccess(user);
+        onAuthSuccess({
+          id: data.id,
+          name: data.name,
+          fullName: data.name,
+          email: data.email,
+        });
       } else {
         console.error(
           "onAuthSuccess function is missing!"
         );
       }
+
     } catch (err) {
       console.error(
         "Login error:",
@@ -241,7 +248,7 @@ function Sign({ onAuthSuccess }) {
       );
 
       setError(
-        "Unable to connect to the server. Please check your internet connection and try again."
+        "Unable to connect to the server. Make sure Spring Boot is running on port 8080."
       );
     } finally {
       setLoading(false);
@@ -323,9 +330,11 @@ function Sign({ onAuthSuccess }) {
         `${API_BASE_URL}/signup`,
         {
           method: "POST",
+
           headers: {
             "Content-Type": "application/json",
           },
+
           body: JSON.stringify({
             fullName,
             email,
@@ -339,6 +348,7 @@ function Sign({ onAuthSuccess }) {
           await getErrorMessage(response);
 
         setError(message);
+
         return;
       }
 
@@ -361,6 +371,7 @@ function Sign({ onAuthSuccess }) {
         setIsLogin(true);
         setSuccess("");
       }, 1200);
+
     } catch (err) {
       console.error(
         "Signup error:",
@@ -368,7 +379,7 @@ function Sign({ onAuthSuccess }) {
       );
 
       setError(
-        "Unable to connect to the server. Please check your internet connection and try again."
+        "Unable to connect to the server. Make sure Spring Boot is running on port 8080."
       );
     } finally {
       setLoading(false);
@@ -407,9 +418,11 @@ function Sign({ onAuthSuccess }) {
         `${API_BASE_URL}/forgot-password`,
         {
           method: "POST",
+
           headers: {
             "Content-Type": "application/json",
           },
+
           body: JSON.stringify({
             email,
           }),
@@ -446,6 +459,7 @@ function Sign({ onAuthSuccess }) {
       }
 
       setSuccess(message);
+
     } catch (err) {
       console.error(
         "Forgot password error:",
@@ -453,7 +467,7 @@ function Sign({ onAuthSuccess }) {
       );
 
       setError(
-        "Unable to connect to the server. Please check your internet connection and try again."
+        "Unable to connect to the server. Make sure Spring Boot is running."
       );
     } finally {
       setLoading(false);
@@ -709,8 +723,12 @@ function Sign({ onAuthSuccess }) {
                     type="text"
                     className="auth-input"
                     placeholder="Enter your full name"
-                    value={formData.fullName}
-                    onChange={handleChange}
+                    value={
+                      formData.fullName
+                    }
+                    onChange={
+                      handleChange
+                    }
                     autoComplete="name"
                   />
 
@@ -739,8 +757,12 @@ function Sign({ onAuthSuccess }) {
                   type="email"
                   className="auth-input"
                   placeholder="you@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
+                  value={
+                    formData.email
+                  }
+                  onChange={
+                    handleChange
+                  }
                   autoComplete="email"
                 />
 
@@ -762,7 +784,9 @@ function Sign({ onAuthSuccess }) {
                   <button
                     type="button"
                     className="forgot-button"
-                    onClick={handleForgotPassword}
+                    onClick={
+                      handleForgotPassword
+                    }
                     disabled={loading}
                   >
                     Forgot password?
@@ -787,8 +811,12 @@ function Sign({ onAuthSuccess }) {
                   }
                   className="auth-input password-input"
                   placeholder="Enter your password"
-                  value={formData.password}
-                  onChange={handleChange}
+                  value={
+                    formData.password
+                  }
+                  onChange={
+                    handleChange
+                  }
                   autoComplete={
                     isLogin
                       ? "current-password"
@@ -801,7 +829,8 @@ function Sign({ onAuthSuccess }) {
                   className="password-toggle"
                   onClick={() =>
                     setShowPassword(
-                      (previous) => !previous
+                      (previous) =>
+                        !previous
                     )
                   }
                 >
@@ -848,7 +877,9 @@ function Sign({ onAuthSuccess }) {
                     value={
                       formData.confirmPassword
                     }
-                    onChange={handleChange}
+                    onChange={
+                      handleChange
+                    }
                     autoComplete="new-password"
                   />
 
@@ -881,7 +912,9 @@ function Sign({ onAuthSuccess }) {
 
                   <input
                     type="checkbox"
-                    checked={rememberMe}
+                    checked={
+                      rememberMe
+                    }
                     onChange={(e) =>
                       setRememberMe(
                         e.target.checked
@@ -910,8 +943,7 @@ function Sign({ onAuthSuccess }) {
                 />
 
                 <label htmlFor="terms">
-
-                  I agree to{" "}
+                  I agree to the{" "}
 
                   <button
                     type="button"
@@ -1045,4 +1077,3 @@ function Sign({ onAuthSuccess }) {
 }
 
 export default Sign;
-
